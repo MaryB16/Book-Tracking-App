@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Bookshelf from './Bookshelf';
 
 class App extends Component {
 
@@ -17,95 +18,9 @@ class App extends Component {
               <h1>Virtual BookShelf</h1>
             </div>
             <div className="all-bookshelves">
-              <div className="bookshelf">
-                <div className="bookshelves-title">
-                  <h3>Currently Reading</h3>
-                </div>
-                <div className="bookshelf-books">
-                  <div className="book">
-                    <div className="bookshelf-changer">
-                      <select>
-                        <option value="none" disabled selected>Move to...</option>
-                        <option value="currentlyReading">Currently Reading</option>
-                        <option value="wantToRead">Want to Read</option>
-                        <option value="read">Read</option>
-                        <option value="none">None</option>
-                      </select>
-                    </div>
-                    <div className="book-cover"></div>
-                    <div className="book-name">
-                      <p>Test Name</p>
-                    </div>
-                    <div className="book-author">
-                      <p>Test author</p>
-                    </div>
-                  </div>
-                  <div className="book">
-                    <div className="bookshelf-changer"></div>
-                    <div className="book-cover"></div>
-                    <div className="book-name">
-                      <p>Test Name</p>
-                    </div>
-                    <div className="book-author">
-                      <p>Test author</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="bookshelf">
-                <div className="bookshelves-title">
-                  <h3>Want To read</h3>
-                </div>
-                <div className="bookshelf-books">
-                  <div className="book">
-                    <div className="bookshelf-changer"></div>
-                    <div className="book-cover"></div>
-                    <div className="book-name">
-                      <p>Test Name</p>
-                    </div>
-                    <div className="book-author">
-                      <p>Test author</p>
-                    </div>
-                  </div>
-                  <div className="book">
-                    <div className="bookshelf-changer"></div>
-                    <div className="book-cover"></div>
-                    <div className="book-name">
-                      <p>Test Name</p>
-                    </div>
-                    <div className="book-author">
-                      <p>Test author</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="bookshelf">
-                <div className="bookshelves-title">
-                  <h3>Read</h3>
-                </div>
-                <div className="bookshelf-books">
-                  <div className="book">
-                    <div className="bookshelf-changer"></div>
-                    <div className="book-cover"></div>
-                    <div className="book-name">
-                      <p>Test Name</p>
-                    </div>
-                    <div className="book-author">
-                      <p>Test author</p>
-                    </div>
-                  </div>
-                  <div className="book">
-                    <div className="bookshelf-changer"></div>
-                    <div className="book-cover"></div>
-                    <div className="book-name">
-                      <p>Test Name</p>
-                    </div>
-                    <div className="book-author">
-                      <p>Test author</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <Bookshelf title ="Currently Reading"/>
+              <Bookshelf title="Want to Read"/>
+              <Bookshelf title="Read"/>
             </div>
             <div className="open-book-search">
               <a onClick ={()=> this.setState({screen:'searchPage'})}> Add book </a>
@@ -127,7 +42,7 @@ class App extends Component {
             </div>
             <div className="results">
               <h3>Results will show up here </h3>
-              </div>
+            </div>
           </div>
         )}
       </div>
