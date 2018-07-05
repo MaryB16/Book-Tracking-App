@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Bookshelf from './Bookshelf';
+import SearchPage from './SearchPage';
 import * as BooksAPI from './BooksAPI'
 
 class App extends Component {
@@ -32,22 +33,7 @@ class App extends Component {
           </div>
         )}
         {this.state.screen==='searchPage' && (
-          <div className="search-page">
-            <div className="search-bar">
-              <div className="back-to-bookshelves">
-                <a onClick ={()=> this.setState({screen:'mainPage'})}></a>
-              </div>
-              <div className="user-input">
-                <input
-                  type="text"
-                  placeholder="Search books"
-                />
-              </div>
-            </div>
-            <div className="results">
-              <h3>Results will show up here </h3>
-            </div>
-          </div>
+          <SearchPage />
         )}
       </div>
     );
