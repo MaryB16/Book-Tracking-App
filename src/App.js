@@ -17,7 +17,6 @@ class App extends Component {
     console.log(books)
   })
 }
-
   render() {
     return (
       <div className="app">
@@ -26,7 +25,7 @@ class App extends Component {
             <div className="book-app-title">
               <h1>Virtual BookShelf</h1>
             </div>
-            <Bookshelf books ={this.state.books}/>
+            <Bookshelf displayBooks ={this.componentDidMount.bind(this)} books ={this.state.books}/>
             <div className="open-book-search">
               <a onClick ={()=> this.setState({screen:'searchPage'})}> Add book </a>
             </div>
