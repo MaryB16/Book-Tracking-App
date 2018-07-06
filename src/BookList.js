@@ -16,7 +16,7 @@ class BookList extends Component {
           <Book
             key ={index}
             book = {book}
-            displayBooks ={this.props.displayBooks}
+            updateBooksCallback ={this.props.updateBooksCallback}
           />
         ))
         }

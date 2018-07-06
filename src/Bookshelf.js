@@ -29,7 +29,7 @@ class Bookshelf extends Component {
               key ={index}
               books ={this.props.books}
               bookshelf = {shelf}
-              displayBooks ={this.props.displayBooks}
+              updateBooksCallback ={this.props.updateBooksCallback}
             />
           </div>
         ))}

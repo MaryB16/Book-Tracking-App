@@ -14,11 +14,17 @@ class App extends Component {
   }
 
   componentDidMount () {
+  this.updateBooks()
+ }
+
+ updateBooks () {
   BooksAPI.getAll().then (books => {
-    this.setState({books})
-    console.log(books)
-  })
-}
+     this.setState({books})
+     console.log(books)
+   })
+
+ }
+
 
   render() {
     return (
@@ -28,7 +34,7 @@ class App extends Component {
             <div className="book-app-title">
               <h1>Virtual BookShelf</h1>
             </div>
-            <Bookshelf displayBooks ={this.componentDidMount.bind(this)} books ={this.state.books}/>
+            <Bookshelf updateBooksCallback ={this.updateBooks.bind(this)} books ={this.state.books}/>
             <Link
               className="open-book-search"
             to="/searchPage">Search for Book

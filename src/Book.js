@@ -14,7 +14,7 @@ class Book extends Component {
 
     BooksAPI.update(book, changeToShelf).then(()=>{
       console.log("book was updated on the server")
-      this.props.displayBooks()
+      this.props.updateBooksCallback()
     })
   }
 
