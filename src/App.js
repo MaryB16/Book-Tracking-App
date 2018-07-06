@@ -10,7 +10,7 @@ import * as BooksAPI from './BooksAPI'
 class App extends Component {
 
   state = {
-    books:[],
+    books:[]
   }
 
   componentDidMount () {
