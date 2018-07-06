@@ -1,19 +1,31 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+import * as BooksAPI from './BooksAPI';
+import BookList from './BookList';
+import SearchResults from './SearchResults'
 
 
 class SearchPage extends Component {
 
   state = {
-    query:''
+    query:'',
+    searchedBooks:[],
+    noResults:false
+  }
+
+  searchBooks = (searchQuery) => {
+    BooksAPI.search(searchQuery).then ((books)=> {
+      this.setState({searchedBooks:books})
+      console.error(books)
+    })
   }
 
   updateQuery =(query) => {
     this.setState({ query:query.trim() })
+    this.searchBooks(query)
   }
 
 render () {
-
   return (
     <div className="search-page">
       <div className="search-bar">
@@ -32,9 +44,11 @@ render () {
           />
         </div>
       </div>
-      <div className="results">
-        <h3>Results will show up here </h3>
-      </div>
+      <SearchResults
+        query= {this.state.query}
+        searchedBooks ={this.state.searchedBooks}
+        noResults ={this.state.noResults}
+      />
     </div>
 
   )}
