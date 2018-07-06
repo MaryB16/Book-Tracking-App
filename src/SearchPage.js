@@ -1,6 +1,16 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
+
 
 class SearchPage extends Component {
+
+  state = {
+    query:''
+  }
+
+  updateQuery =(query) => {
+    this.setState({ query:query.trim() })
+  }
 
 render () {
 
@@ -8,12 +18,17 @@ render () {
     <div className="search-page">
       <div className="search-bar">
         <div className="back-to-bookshelves">
-          <a></a>
+          <Link
+            className="icon"
+          to="/">
+          </Link>
         </div>
         <div className="user-input">
           <input
             type="text"
             placeholder="Search books"
+            value ={this.state.query}
+            onChange ={(event) => this.updateQuery(event.target.value) }
           />
         </div>
       </div>

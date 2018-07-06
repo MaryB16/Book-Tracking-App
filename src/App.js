@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 import Bookshelf from './Bookshelf';
@@ -9,7 +11,6 @@ class App extends Component {
 
   state = {
     books:[],
-    screen: 'mainPage'
   }
 
   componentDidMount () {
@@ -18,25 +19,25 @@ class App extends Component {
     console.log(books)
   })
 }
+
   render() {
     return (
       <div className="app">
-        {this.state.screen === 'mainPage' && (
+        <Route exact path="/" render = {()=>(
           <div className="main-page">
             <div className="book-app-title">
               <h1>Virtual BookShelf</h1>
             </div>
             <Bookshelf displayBooks ={this.componentDidMount.bind(this)} books ={this.state.books}/>
-            <div className="open-book-search">
-              <a onClick ={()=> this.setState({screen:'searchPage'})}> Add book </a>
-            </div>
+            <Link
+              className="open-book-search"
+            to="/searchPage">Search for Book
+            </Link>
           </div>
-        )}
-        {this.state.screen==='searchPage' && (
-          <SearchPage />
-        )}
+        )}/>
+        <Route path="/searchPage" component ={SearchPage}/>
       </div>
-    );
+    )
   }
 }
 
