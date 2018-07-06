@@ -14,7 +14,7 @@ class Book extends Component {
 
     BooksAPI.update(book, changeToShelf).then(()=>{
       console.log("book was updated on the server")
-      this.props.updateBooksCallback()
+      if(this.props.updateBooksCallback!=null) this.props.updateBooksCallback()
     })
   }
 
@@ -23,8 +23,8 @@ class Book extends Component {
     return (
       <div className="book">
         <div className="bookshelf-changer">
-          <select value={this.props.book.shelf} onChange={this.changeShelf.bind(this)}>
-            <option value="none" disabled defaultValue>Move to...</option>
+          <select value={this.props.book.shelf ? this.props.book.shelf : 'none'} onChange={this.changeShelf.bind(this)}>
+            <option value="moveTo" disabled defaultValue>Move to...</option>
             <option value="currentlyReading">Currently Reading</option>
             <option value="wantToRead">Want to Read</option>
             <option value="read">Read</option>
