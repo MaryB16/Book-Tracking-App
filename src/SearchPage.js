@@ -10,7 +10,6 @@ class SearchPage extends Component {
   state = {
     query:'',
     searchedBooks:[],
-    noResults:false
   }
 
   searchBooks = (searchQuery) => {
@@ -47,7 +46,6 @@ render () {
       <SearchResults
         query= {this.state.query}
         searchedBooks ={this.state.searchedBooks}
-        noResults ={this.state.noResults}
       />
     </div>
 
