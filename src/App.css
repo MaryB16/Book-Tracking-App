@@ -1,41 +1,67 @@
 html, body, .root {
   height: 100%;
+  background-color:#edfafd;
 }
 
 /*Main Page*/
 .book-app-title {
-  border:solid blue 2px;
+  background-color:#2a93d5;
+  color:#fff;
   text-align:center;
+  padding:2px;
 }
 
 /*Bookshelves*/
-.all-bookshelves {
-  border: solid green 2px;
-}
 
 .bookshelves-title {
-  border: solid black 2px;
-  text-align:center;
-  background-color:#99FFFF;
+  font-size:1.5em;
+  color:#135589;
+  border-bottom: #3ddad7 groove 2px;
+  padding:10px;
+  font-weight: 600;
+  margin-top:4%;
+  margin-bottom:20px;
+  width:30%;
+}
+
+.bookshelf-booklist {
+  display:flex;
 }
 
 .bookshelf-bookList {
   display:flex;
+  flex-wrap:wrap;
+  justify-content: center;
+
 }
 
 /*Book*/
 .book {
-  padding-right:50px;
-  padding-left:50px;
-  border:solid green 3px;
+  padding-right:30px;
+  padding-left:30px;
+  margin-top:30px;
   position:relative;
 }
 
 .book-cover {
-  height: 150px;
-  width: 100px;
-  background-color:#CCFF66;
-  border:solid black 3px;
+  height: 193px;
+  width: 128px;
+}
+
+.book-details {
+  width:140px;
+}
+
+.book-name {
+  font-size:0.9em;
+  margin-top:10px;
+  line-height:1.3;
+}
+
+.book-authors {
+  margin-top:8px;
+  font-size:14px;
+  color:	#808080
 }
 
 .bookshelf-changer {
@@ -44,7 +70,7 @@ html, body, .root {
   top:3px;
   position: absolute;
   border-radius: 50%;
-  background: #60ac5d;
+  background: #135589;
   background-image: url('./icons/arrow-drop-down.svg');
   background-repeat: no-repeat;
   background-position: center;
@@ -61,21 +87,27 @@ html, body, .root {
 
 /*Search */
 .open-book-search {
-  width:100px;
-  height:50px;
-  background-color:  #ff8080;
+
   text-align:center;
   position: fixed;
   right: 30px;
   bottom: 30px;
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #2a93d5;
+  background-image: url('./icons/add.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 28px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  font-size: 0;
 }
 
 .search-bar {
-  /*position: fixed
   top: 0;
   left: 0;
-  z-index: 5;
-  */
   width: 100%;
   display: flex;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 0 6px rgba(0,0,0,0.23);
@@ -85,7 +117,7 @@ html, body, .root {
   display: block;
   width: 60px;
   height: 60px;
-  background: #ffcccc;
+  background: #aed9da;
   background-image: url('./icons/arrow-back.svg');
   background-position: center;
   background-repeat: no-repeat;
@@ -98,6 +130,7 @@ html, body, .root {
 .user-input input {
   width:1000px;
   padding: 15px 10px;
+  background-color: #edfafd;
   font-size: 1.4em;
   /*border: none;
   outline: none;

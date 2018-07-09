@@ -37,7 +37,7 @@ class App extends Component {
             <Bookshelf updateBooksCallback ={this.updateBooks.bind(this)} books ={this.state.books}/>
             <Link
               className="open-book-search"
-            to="/searchPage">Search for Book
+            to="/searchPage">
             </Link>
           </div>
         )}/>
