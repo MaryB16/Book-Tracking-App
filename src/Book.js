@@ -9,19 +9,19 @@ class Book extends Component {
 
   changeShelf(event) {
 
-    const book=this.props.book
+    const book= this.props.book
     const changeToShelf=event.target.value
 
     BooksAPI.update(book, changeToShelf).then(()=>{
       console.log("book was updated on the server")
-      this.props.book.shelf = changeToShelf
+      book.shelf = changeToShelf
       this.setState({bookshelf: changeToShelf})
       if(this.props.updateBooksCallback!=null) this.props.updateBooksCallback()
     })
   }
 
   render (){
-
+    const book= this.props.book
     return (
       <div className="book">
         <div className="bookshelf-changer">
@@ -33,13 +33,19 @@ class Book extends Component {
             <option value="none">None</option>
           </select>
         </div>
-
-        <div className="book-cover"></div>
-        <div className="book-name">
-          <p>{this.props.book.title}</p>
-        </div>
-        <div className="book-author">
-          <p>{this.props.book.author}</p>
+        <div className="book-details">
+          <div className="book-cover"
+            style={
+              {backgroundImage:`url(${book.imageLinks.thumbnail})`
+              }
+            }>
+          </div>
+          <div className="book-name">
+            {book.title}
+          </div>
+          <div className="book-authors">
+            {book.authors.join(', ')}
+          </div>
         </div>
       </div>
     )

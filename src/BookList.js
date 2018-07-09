@@ -11,7 +11,6 @@ class BookList extends Component {
       filteredBooks = books
     return (
       <div className ='bookshelf-bookList'>
-
         {filteredBooks.map((book,index) => (
           <Book
             key ={index}
