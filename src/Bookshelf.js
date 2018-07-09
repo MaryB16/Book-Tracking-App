@@ -23,7 +23,7 @@ class Bookshelf extends Component {
         {this.state.shelves.map((shelf,index) => (
           <div className="bookshelf">
             <div className="bookshelves-title">
-              <h3>{shelf.name}</h3>
+              <div>{shelf.name}</div>
             </div>
             <BookList
               key ={index}
