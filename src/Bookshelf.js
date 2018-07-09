@@ -21,7 +21,9 @@ class Bookshelf extends Component {
     return(
       <div className="bookshelves">
         {this.state.shelves.map((shelf,index) => (
-          <div className="bookshelf">
+          <div
+            className="bookshelf"
+            key={index}>
             <div className="bookshelves-title">
               <div>{shelf.name}</div>
             </div>
