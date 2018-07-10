@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as BooksAPI from './BooksAPI'
+import placeholder from "./icons/placeholder.jpg"
 
 class Book extends Component {
 
@@ -25,7 +26,7 @@ class Book extends Component {
 
     /*Placeholders in case some details are missing from the books*/
     const bookAuthors = book.authors ? book.authors.join(', ') : 'No authors'
-    const bookCover = book.imageLinks ? book.imageLinks.thumbnail || book.imageLinks.smallThumbnail : null
+    const bookCover = book.imageLinks ? book.imageLinks.thumbnail || book.imageLinks.smallThumbnail : placeholder
     const bookTitle = book.title? book.title : 'No title'
 
     return (
@@ -43,7 +44,7 @@ class Book extends Component {
           <div className="book-cover"
             style={
               {
-                backgroundImage:`url(${bookCover})`
+                backgroundImage:`url('${bookCover}')`
               }}>
           </div>
           <div className="book-name">
