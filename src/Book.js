@@ -22,6 +22,12 @@ class Book extends Component {
 
   render (){
     const book= this.props.book
+
+    /*Placeholders in case some details are missing from the books*/
+    const bookAuthors = book.authors ? book.authors.join(', ') : 'No authors'
+    const bookCover = book.imageLinks ? book.imageLinks.thumbnail || book.imageLinks.smallThumbnail : null
+    const bookTitle = book.title? book.title : 'No title'
+
     return (
       <div className="book">
         <div className="bookshelf-changer">
@@ -36,15 +42,15 @@ class Book extends Component {
         <div className="book-details">
           <div className="book-cover"
             style={
-              {backgroundImage:`url(${book.imageLinks.thumbnail})`
-              }
-            }>
+              {
+                backgroundImage:`url(${bookCover})`
+              }}>
           </div>
           <div className="book-name">
-            {book.title}
+            {bookTitle}
           </div>
           <div className="book-authors">
-            {book.authors.join(', ')}
+            {bookAuthors}
           </div>
         </div>
       </div>
