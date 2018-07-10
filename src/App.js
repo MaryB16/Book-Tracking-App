@@ -17,7 +17,7 @@ class App extends Component {
   this.updateBooks()
  }
 
- updateBooks () {
+ updateBooks =() =>{
   BooksAPI.getAll().then (books => {
      this.setState({books})
      console.log(books)
@@ -34,7 +34,7 @@ class App extends Component {
             <div className="book-app-title">
               <h1>Virtual BookShelf</h1>
             </div>
-            <Bookshelf updateBooksCallback ={this.updateBooks.bind(this)} books ={this.state.books}/>
+            <Bookshelf updateBooksCallback ={this.updateBooks} books ={this.state.books}/>
             <Link
               className="open-book-search"
             to="/searchPage">

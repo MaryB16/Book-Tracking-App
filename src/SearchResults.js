@@ -5,7 +5,7 @@ class SearchResults extends Component {
   render () {
     const {query,searchedBooks, noResults } = this.props
 
-    console.log("this is query " + query)
+    console.log("this is the typed query: " + query)
 
       if(query)
     return (

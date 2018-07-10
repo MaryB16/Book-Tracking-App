@@ -7,7 +7,7 @@ class Book extends Component {
     bookshelf:this.props.book.shelf
   }
 
-  changeShelf(event) {
+  changeShelf=(event) => {
 
     const book= this.props.book
     const changeToShelf=event.target.value
@@ -31,7 +31,7 @@ class Book extends Component {
     return (
       <div className="book">
         <div className="bookshelf-changer">
-          <select value={this.props.book.shelf ? this.props.book.shelf : 'none'} onChange={this.changeShelf.bind(this)}>
+          <select value={this.props.book.shelf ? this.props.book.shelf : 'none'} onChange={this.changeShelf}>
             <option value="moveTo" disabled defaultValue>Move to...</option>
             <option value="currentlyReading">Currently Reading</option>
             <option value="wantToRead">Want to Read</option>
