@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Book from './Book'
 
 class BookList extends Component {
+  
   render () {
     const {bookshelf, books} = this.props
     let filteredBooks
