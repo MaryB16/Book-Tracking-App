@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import BookList from './BookList';
 
-class SearchResults extends Component {
-  render () {
-    const {query,searchedBooks} = this.props
-    
+const SearchResults = (props) => {
+    const {query,searchedBooks} = props
+
       if(query)
     return (
       <div className="results">
@@ -25,7 +24,6 @@ class SearchResults extends Component {
         <p><a href= "https://github.com/udacity/reactnd-project-myreads-starter/blob/master/SEARCH_TERMS.md"> here</a></p>
       </div>
       )
-  }
 }
 
 export default SearchResults

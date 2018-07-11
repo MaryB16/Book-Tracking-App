@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Book from './Book'
 
-class BookList extends Component {
-  
-  render () {
-    const {bookshelf, books} = this.props
+const BookList = (props) => {
+
+    const {bookshelf, books} = props
     let filteredBooks
     if(bookshelf)
        filteredBooks = books.filter(book=> book.shelf === bookshelf.filter)
@@ -16,13 +15,12 @@ class BookList extends Component {
           <Book
             key ={index}
             book = {book}
-            updateBooksCallback ={this.props.updateBooksCallback}
+            updateBooksCallback ={props.updateBooksCallback}
           />
         ))
         }
       </div>
     )
-  }
 }
 
 export default BookList;
