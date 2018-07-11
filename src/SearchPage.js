@@ -9,7 +9,7 @@ class SearchPage extends Component {
 
   state = {
     query:'',
-    searchedBooks:[],
+    searchedBooks:[]
   }
 
   searchBooks = (searchQuery) => {
@@ -48,7 +48,6 @@ render () {
         searchedBooks ={this.state.searchedBooks}
       />
     </div>
-
   )}
 }
 

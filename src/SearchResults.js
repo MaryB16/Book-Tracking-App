@@ -3,7 +3,7 @@ import BookList from './BookList';
 
 class SearchResults extends Component {
   render () {
-    const {query,searchedBooks, noResults } = this.props
+    const {query,searchedBooks} = this.props
 
     console.log("this is the typed query: " + query)
 
@@ -15,16 +15,16 @@ class SearchResults extends Component {
             books={searchedBooks}
           />
         ) : (
-          <p>No results match your query</p>
+          <div className="search-info">No results match your query</div>
         )}
-
       </div>
     )
 
     else return (
       <div className="search-info">
-        <p> Please keep in mind only certain words can be searched</p>
-        <p> These search terms can be found here : "https://github.com/udacity/reactnd-project-myreads-starter/blob/master/SEARCH_TERMS.md"</p>
+        <p> Please keep in mind that only certain words can be searched. </p>
+        <p> These search terms can be found </p>
+        <p><a href= "https://github.com/udacity/reactnd-project-myreads-starter/blob/master/SEARCH_TERMS.md"> here</a></p>
       </div>
       )
   }
