@@ -1,45 +1,47 @@
 html, body, .root {
   height: 100%;
-  background-color:#edfafd;
+  background-color: #edfafd;
 }
 
 /*Main Page*/
+
 .book-app-title {
-  background-color:#2a93d5;
-  color:#fff;
-  text-align:center;
-  padding:2px;
+  background-color: #2a93d5;
+  color: #fff;
+  text-align: center;
+  padding: 2px;
 }
 
 /*Bookshelves*/
+
 .bookshelves-title {
-  font-size:1.5em;
-  color:#135589;
+  font-size: 1.5em;
+  color: #135589;
   border-bottom: #3ddad7 groove 2px;
-  padding:10px;
+  padding: 10px;
   font-weight: 600;
-  margin-top:4%;
-  margin-bottom:20px;
-  width:80%;
+  margin-top: 4%;
+  margin-bottom: 20px;
+  width: 80%;
 }
 
 .bookshelf-booklist {
-  display:flex;
+  display: flex;
 }
 
 .bookshelf-bookList {
-  display:flex;
-  flex-wrap:wrap;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-
 }
 
 /*Book*/
+
 .book {
-  padding-right:30px;
-  padding-left:30px;
-  margin-top:30px;
-  position:relative;
+  padding-right: 30px;
+  padding-left: 30px;
+  margin-top: 30px;
+  position: relative;
 }
 
 .book-cover {
@@ -48,25 +50,25 @@ html, body, .root {
 }
 
 .book-details {
-  width:140px;
+  width: 140px;
 }
 
 .book-name {
-  font-size:0.9em;
-  margin-top:10px;
-  line-height:1.3;
+  font-size: 0.9em;
+  margin-top: 10px;
+  line-height: 1.3;
 }
 
 .book-authors {
-  margin-top:8px;
-  font-size:14px;
-  color:	#808080
+  margin-top: 8px;
+  font-size: 14px;
+  color: #808080
 }
 
 .bookshelf-changer {
-  width:30px;
-  height:30px;
-  top:3px;
+  width: 30px;
+  height: 30px;
+  top: 3px;
   position: absolute;
   border-radius: 50%;
   background: #135589;
@@ -74,7 +76,7 @@ html, body, .root {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 20px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 .bookshelf-changer select {
@@ -85,8 +87,9 @@ html, body, .root {
 }
 
 /*Search */
+
 .open-book-search {
-  text-align:center;
+  text-align: center;
   position: fixed;
   right: 30px;
   bottom: 30px;
@@ -99,7 +102,7 @@ html, body, .root {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 28px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   font-size: 0;
 }
 
@@ -108,7 +111,7 @@ html, body, .root {
   left: 0;
   width: 100%;
   display: flex;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 0 6px rgba(0,0,0,0.23);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 0 6px rgba(0, 0, 0, 0.23);
 }
 
 .back-to-bookshelves .icon {
@@ -120,14 +123,30 @@ html, body, .root {
   background-position: center;
   background-repeat: no-repeat;
   background-size: 40px;
-  margin-right:10px;
+  margin-right: 10px;
 }
 
 .user-input input {
-  width:1000px;
+  width: 1000px;
   padding: 15px 10px;
   background-color: #edfafd;
   font-size: 1.4em;
   border: none;
   outline: none;
+}
+
+.search-info {
+  display: flex;
+  margin-top: 20px;
+  margin-left: 30px;
+  font-size: 1.2em;
+  color: #135589;
+}
+
+.search-info p {
+  margin-left: 6px;
+}
+
+.search-info a {
+  margin-left: 5px;
 }
