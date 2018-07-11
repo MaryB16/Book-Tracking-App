@@ -4,9 +4,7 @@ import BookList from './BookList';
 class SearchResults extends Component {
   render () {
     const {query,searchedBooks} = this.props
-
-    console.log("this is the typed query: " + query)
-
+    
       if(query)
     return (
       <div className="results">

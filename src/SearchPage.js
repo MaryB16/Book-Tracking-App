@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import * as BooksAPI from './BooksAPI';
-import BookList from './BookList';
 import SearchResults from './SearchResults'
 
 
@@ -15,7 +14,6 @@ class SearchPage extends Component {
   searchBooks = (searchQuery) => {
     BooksAPI.search(searchQuery).then ((books)=> {
       this.setState({searchedBooks:books})
-      console.error(books)
     })
   }
 

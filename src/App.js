@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import {Route} from 'react-router-dom';
-import logo from './logo.svg';
+
 import './App.css';
 import Bookshelf from './Bookshelf';
 import SearchPage from './SearchPage';
@@ -20,9 +20,7 @@ class App extends Component {
  updateBooks =() =>{
   BooksAPI.getAll().then (books => {
      this.setState({books})
-     console.log(books)
    })
-
  }
 
   render() {
