@@ -44,6 +44,7 @@ render () {
       <SearchResults
         query= {this.state.query}
         searchedBooks ={this.state.searchedBooks}
+        updateShelf ={this.props.updateShelf}
       />
     </div>
   )}

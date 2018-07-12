@@ -2,7 +2,8 @@ import React from 'react';
 import BookList from './BookList';
 
 const SearchResults = (props) => {
-    const {query,searchedBooks} = props
+    const {query,searchedBooks, updateShelf} = props
+    console.log(props.updateShelf)
 
       if(query)
     return (
@@ -10,6 +11,7 @@ const SearchResults = (props) => {
         {(searchedBooks!=null && searchedBooks.length>0) ?(
           <BookList
             books={searchedBooks}
+            updateShelf ={updateShelf}
           />
         ) : (
           <div className="search-info">No results match your query</div>

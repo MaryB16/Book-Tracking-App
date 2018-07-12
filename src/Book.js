@@ -4,24 +4,8 @@ import placeholder from "./icons/placeholder.jpg"
 
 class Book extends Component {
 
-  state ={
-    bookshelf:this.props.book.shelf
-  }
-
-  changeShelf=(event) => {
-
-    const book= this.props.book
-    const changeToShelf=event.target.value
-
-    BooksAPI.update(book, changeToShelf).then(()=>{
-      console.log("book was updated on the server")
-      book.shelf = changeToShelf
-      this.setState({bookshelf: changeToShelf})
-      if(this.props.updateBooksCallback!=null) this.props.updateBooksCallback()
-    })
-  }
-
   render (){
+    console.log(this.props.updateShelf)
     const book= this.props.book
 
     /*Placeholders in case some details are missing from the books*/
@@ -32,7 +16,7 @@ class Book extends Component {
     return (
       <div className="book">
         <div className="bookshelf-changer">
-          <select value={this.props.book.shelf ? this.props.book.shelf : 'none'} onChange={this.changeShelf}>
+          <select value={this.props.book.shelf ? this.props.book.shelf : 'none'} onChange={(event) => {this.props.updateShelf(book, event.target.value)}}>
             <option value="moveTo" disabled defaultValue>Move to...</option>
             <option value="currentlyReading">Currently Reading</option>
             <option value="wantToRead">Want to Read</option>

@@ -3,7 +3,7 @@ import Book from './Book'
 
 const BookList = (props) => {
 
-    const {bookshelf, books} = props
+    const {bookshelf, books, updateShelf} = props
     let filteredBooks
     if(bookshelf)
        filteredBooks = books.filter(book=> book.shelf === bookshelf.filter)
@@ -15,7 +15,7 @@ const BookList = (props) => {
           <Book
             key ={index}
             book = {book}
-            updateBooksCallback ={props.updateBooksCallback}
+            updateShelf={updateShelf}
           />
         ))
         }

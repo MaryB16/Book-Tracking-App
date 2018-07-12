@@ -19,7 +19,6 @@ class Bookshelf extends Component {
   ]}
   render (){
 
-
     return(
       <div className="bookshelves">
         {this.state.shelves.map((shelf,index) => (
@@ -33,7 +32,8 @@ class Bookshelf extends Component {
               key ={index}
               books ={this.props.books}
               bookshelf = {shelf}
-              updateBooksCallback ={this.props.updateBooksCallback}
+              
+              updateShelf={this.props.updateShelf}
             />
           </div>
         ))}

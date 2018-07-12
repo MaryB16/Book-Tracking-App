@@ -23,6 +23,16 @@ class App extends Component {
    })
  }
 
+ updateShelf = (selectedBook, updatedShelf) => {
+     selectedBook.shelf = updatedShelf
+     BooksAPI.update(selectedBook, updatedShelf).then(() => {
+       this.setState({
+         books: this.state.books.filter(book => book.id !== selectedBook.id).concat([selectedBook])
+       })
+     })
+   }
+
+
   render() {
     return (
       <div className="app">
@@ -31,14 +41,23 @@ class App extends Component {
             <div className="book-app-title">
               <h1>Virtual BookShelf</h1>
             </div>
-            <Bookshelf updateBooksCallback ={this.updateBooks} books ={this.state.books}/>
+            <Bookshelf
+              books ={this.state.books}
+              updateShelf={this.updateShelf}
+            />
             <Link
               className="open-book-search"
             to="/searchPage">
             </Link>
           </div>
         )}/>
-        <Route path="/searchPage" component ={SearchPage}/>
+        <Route path="/searchPage" render ={() => (
+          <SearchPage
+            updateShelf = {this.updateShelf}
+            books ={this.state.books}
+          />
+        )}
+        />
       </div>
     )
   }
