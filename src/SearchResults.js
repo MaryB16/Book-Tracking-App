@@ -3,7 +3,6 @@ import BookList from './BookList';
 
 const SearchResults = (props) => {
     const {query,searchedBooks, updateShelf} = props
-    console.log(props.updateShelf)
 
       if(query)
     return (

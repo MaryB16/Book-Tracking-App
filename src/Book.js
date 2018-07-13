@@ -5,7 +5,6 @@ import placeholder from "./icons/placeholder.jpg"
 class Book extends Component {
 
   render (){
-    console.log(this.props.updateShelf)
     const book= this.props.book
 
     /*Placeholders in case some details are missing from the books*/

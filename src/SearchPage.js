@@ -14,11 +14,12 @@ class SearchPage extends Component {
   searchBooks = (searchQuery) => {
     BooksAPI.search(searchQuery).then ((books)=> {
       this.setState({searchedBooks:books})
+      console.log(this.state.searchedBooks)
     })
   }
 
   updateQuery =(query) => {
-    this.setState({ query:query.trim() })
+    this.setState({query})
     this.searchBooks(query)
   }
 
@@ -45,6 +46,7 @@ render () {
         query= {this.state.query}
         searchedBooks ={this.state.searchedBooks}
         updateShelf ={this.props.updateShelf}
+        books = {this.props.books}
       />
     </div>
   )}

@@ -32,7 +32,6 @@ class Bookshelf extends Component {
               key ={index}
               books ={this.props.books}
               bookshelf = {shelf}
-              
               updateShelf={this.props.updateShelf}
             />
           </div>
