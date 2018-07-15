@@ -3,8 +3,7 @@ import BookList from './BookList';
 
 const SearchResults = (props) => {
     const {query,searchedBooks, updateShelf} = props
-
-      if(query)
+  if(query)
     return (
       <div className="results">
         {(searchedBooks!=null && searchedBooks.length>0) ?(

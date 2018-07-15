@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom';
 import * as BooksAPI from './BooksAPI';
 import SearchResults from './SearchResults'
 
-
 class SearchPage extends Component {
 
   state = {
@@ -26,10 +25,7 @@ class SearchPage extends Component {
           })
       }
       this.setState({searchedBooks:searchedBooksWithShelf})
-
-
     })
-
   }
 
   updateQuery =(query) => {
@@ -37,34 +33,32 @@ class SearchPage extends Component {
     this.searchBooks(query)
   }
 
-
-
-render () {
-  return (
-    <div className="search-page">
-      <div className="search-bar">
-        <div className="back-to-bookshelves">
-          <Link
-            className="icon"
-          to="/">
-          </Link>
+  render () {
+    return (
+      <div className="search-page">
+        <div className="search-bar">
+          <div className="back-to-bookshelves">
+            <Link
+              className="icon"
+            to="/">
+            </Link>
+          </div>
+          <div className="user-input">
+            <input
+              type="text"
+              placeholder="Search books"
+              value ={this.state.query}
+              onChange ={(event) => this.updateQuery(event.target.value) }
+            />
+          </div>
         </div>
-        <div className="user-input">
-          <input
-            type="text"
-            placeholder="Search books"
-            value ={this.state.query}
-            onChange ={(event) => this.updateQuery(event.target.value) }
-          />
-        </div>
+        <SearchResults
+          query= {this.state.query}
+          searchedBooks ={this.state.searchedBooks}
+          updateShelf ={this.props.updateShelf}
+          books = {this.props.books}
+        />
       </div>
-      <SearchResults
-        query= {this.state.query}
-        searchedBooks ={this.state.searchedBooks}
-        updateShelf ={this.props.updateShelf}
-        books = {this.props.books}
-      />
-    </div>
   )}
 }
 

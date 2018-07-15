@@ -2,7 +2,6 @@ import React from 'react';
 import Book from './Book'
 
 const BookList = (props) => {
-
     const {bookshelf, books, updateShelf} = props
     let filteredBooks
     if(bookshelf)
