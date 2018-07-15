@@ -13,19 +13,19 @@ class SearchPage extends Component {
 
   searchBooks = (searchQuery) => {
     BooksAPI.search(searchQuery).then ((searchedBooks)=> {
-
+    let searchedBooksWithShelf=[];
 /*Checking to see if the search returned any books. If it did add shelf to the books that are on the main page shelves as well*/
       if( searchedBooks && searchedBooks.length) {
-          searchedBooks.map (searchedBook => {
+            searchedBooksWithShelf = searchedBooks.map (searchedBook => {
             this.props.books.forEach(book =>{
               if(book.id=== searchedBook.id) {
                 searchedBook.shelf = book.shelf
               }
             })
-              this.setState({searchedBooks:searchedBooks})
+            return searchedBook
           })
       }
-        else  this.setState({searchedBooks:[]})
+      this.setState({searchedBooks:searchedBooksWithShelf})
 
 
     })
