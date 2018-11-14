@@ -1,52 +1,105 @@
 html, body, .root {
   height: 100%;
-  background-color: #edfafd;
 }
 
 /*Main Page*/
 
 .book-app-title {
-  background-color: #2a93d5;
-  color: #fff;
+  background-color: #fff;
+  display:flex;
+  justify-content: space-between;
+  position:fixed;
+  z-index:100;
+  width:100%;
+  height:75px;
+  color: #f53240;
+  padding-left:40px;
+  opacity:0.9;
+  box-shadow:0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.book-app-title > h3 {
+  font-size:23px;
+}
+
+.navigation {
+  display:flex;
+  margin-right:1%;
+  justify-content: flex-end;
+  align-items: center;
+  width:50%;
+}
+
+
+.navigation-buttons {
+  border: none;
+  color: #f53240;
+  font-weight: 600;
+  padding: 1px 6px 1px 30px;
+  background-color:white;
   text-align: center;
-  padding: 2px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.navigation-buttons:hover{
+  color:grey;
+}
+
+.navigation-buttons:first-child:hover{
+  color: #8FC33A;
+}
+
+.headerImage {
+  margin-top:74px;
+  width:100%;
+  height:400px;
+  object-fit: cover;
 }
 
 /*Bookshelves*/
 
-.bookshelves-title {
-  font-size: 1.5em;
-  color: #135589;
-  border-bottom: #3ddad7 groove 2px;
-  padding: 10px;
-  font-weight: 600;
-  margin-top: 4%;
-  margin-bottom: 20px;
-  width: 80%;
+.bookshelves {
+  display:flex;
 }
 
-.bookshelf-booklist {
-  display: flex;
+.bookshelf{
+  width:32%;
+  margin:1%;
+  min-height:1000px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.bookshelves-title {
+  font-size: 1.5em;
+  background-color:#02c8a7;
+  color: #fff;
+  padding: 17px;
+  font-weight: 600;
+  text-align:center;
+
 }
 
 .bookshelf-bookList {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+
 }
 
 /*Book*/
 
 .book {
-  padding-right: 30px;
-  padding-left: 30px;
-  margin-top: 30px;
+  padding-right: 5%;
+  padding-left: 6%;
+  margin-top: 6%;
   position: relative;
 }
 
 .book-cover {
-  height: 193px;
-  width: 128px;
+  height: 240px;
+  width: 170px;
+  background-repeat:no-repeat;
+  background-size:cover;
 }
 
 .book-details {
@@ -71,7 +124,7 @@ html, body, .root {
   top: 3px;
   position: absolute;
   border-radius: 50%;
-  background: #135589;
+  background: #f9be02;
   background-image: url('./icons/arrow-drop-down.svg');
   background-repeat: no-repeat;
   background-position: center;
@@ -86,39 +139,55 @@ html, body, .root {
   cursor: pointer;
 }
 
-/*Search */
 
-.open-book-search {
-  text-align: center;
-  position: fixed;
-  right: 30px;
-  bottom: 30px;
-  display: block;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: #2a93d5;
-  background-image: url('./icons/add.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 28px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  font-size: 0;
+/*footer*/
+.main-page > footer {
+  background-color:#000000b0;
+  height:60px;
+  width:100%;
+  display:flex;
+  justify-content: flex-end;
+  align-items: center;
 }
+
+.main-page > footer > span {
+  color:#fff;
+  text-align: center;
+  padding-right:2%
+}
+
+.icons{
+  display:flex;
+}
+
+.icons >i  {
+  color:white;
+  padding: 0 20px;
+}
+
+.icons>i:last-child{
+  padding-right:30px;
+}
+
+
+
+/*Search */
 
 .search-bar {
   top: 0;
   left: 0;
   width: 100%;
   display: flex;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 0 6px rgba(0, 0, 0, 0.23);
+  border-radius:5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.19), 0 3px 3px rgba(0,0,0,0.23);
 }
 
 .back-to-bookshelves .icon {
   display: block;
   width: 60px;
   height: 60px;
-  background: #aed9da;
+  background: #f9be02;
+  border-radius:50px;
   background-image: url('./icons/arrow-back.svg');
   background-position: center;
   background-repeat: no-repeat;
@@ -129,7 +198,6 @@ html, body, .root {
 .user-input input {
   width: 1000px;
   padding: 15px 10px;
-  background-color: #edfafd;
   font-size: 1.4em;
   border: none;
   outline: none;
@@ -139,14 +207,15 @@ html, body, .root {
   display: flex;
   margin-top: 20px;
   margin-left: 30px;
-  font-size: 1.2em;
-  color: #135589;
+  font-size: 1.1em;
+  color: #02c8a7;
 }
 
-.search-info p {
-  margin-left: 6px;
+.link {
+  margin-left:8px;
+  color: #02c8a7;
 }
 
-.search-info a {
-  margin-left: 5px;
+.link >a {
+  color: #02c8a7;
 }

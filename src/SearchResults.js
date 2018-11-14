@@ -18,11 +18,11 @@ const SearchResults = (props) => {
     )
 
     else return (
-      <div className="search-info">
-        <p> Please keep in mind that only certain words can be searched. </p>
-        <p> These search terms can be found </p>
-        <p><a href= "https://github.com/udacity/reactnd-project-myreads-starter/blob/master/SEARCH_TERMS.md"> here</a></p>
-      </div>
+      <footer className="search-info">
+      <span> Please keep in mind that only certain words can be searched. </span>
+        <span> These search terms can be found </span>
+        <span className="link"><a href= "https://github.com/udacity/reactnd-project-myreads-starter/blob/master/SEARCH_TERMS.md"> here</a></span>
+      </footer>
       )
 }
 
